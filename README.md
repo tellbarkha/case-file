@@ -8,7 +8,7 @@ Live demo: https://tellbarkha.github.io/case-file/
 
 You search a condition (like "diabetes") and get back real trials happening right now. Each result shows as a card, styled to look like a case report form. Click a card to open a detail panel with the full record — eligibility criteria, sponsor, dates, and trial sites.
 
-It's a plain static site: HTML, CSS, and JavaScript. No frameworks, no build step, nothing to install.
+It's a plain static site: HTML, CSS, and JavaScript. 
 
 ## Files
 
