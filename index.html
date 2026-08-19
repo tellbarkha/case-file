@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case File — Clinical Trial Explorer</title>
+<meta name="description" content="Search live clinical trial data from ClinicalTrials.gov, presented as case report forms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__badge">FORM CT&#8209;2</div>
+      <h1 class="masthead__title">Case File</h1>
+      <p class="masthead__subtitle">A live index of clinical trials, drawn from the U.S. National Library of Medicine's public registry</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-panel" aria-label="Search clinical trials">
+      <form id="search-form" class="search-form" autocomplete="off">
+        <label for="condition-input" class="search-form__label">
+          <span class="search-form__label-index">01</span> Condition or disease under study
+        </label>
+        <div class="search-form__row">
+          <span class="search-form__prompt">&gt;</span>
+          <input
+            id="condition-input"
+            type="text"
+            name="condition"
+            placeholder="type a condition — e.g. melanoma, type 1 diabetes, migraine"
+            required
+          >
+          <button type="submit" class="stamp-button">
+            <span>File Search</span>
+          </button>
+        </div>
+        <div class="search-form__chips" id="example-chips">
+          <span class="chip-label">try:</span>
+          <button type="button" class="chip" data-value="breast cancer">breast cancer</button>
+          <button type="button" class="chip" data-value="depression">depression</button>
+          <button type="button" class="chip" data-value="parkinson's disease">parkinson's disease</button>
+          <button type="button" class="chip" data-value="asthma">asthma</button>
+          <button type="button" class="chip" data-value="long covid">long covid</button>
+        </div>
+      </form>
+
+      <div class="search-form__filters" id="status-filters">
+        <span class="filter-label">Status:</span>
+        <label class="filter-pill"><input type="checkbox" value="RECRUITING" checked> Recruiting</label>
+        <label class="filter-pill"><input type="checkbox" value="NOT_YET_RECRUITING" checked> Not yet recruiting</label>
+        <label class="filter-pill"><input type="checkbox" value="ACTIVE_NOT_RECRUITING" checked> Active</label>
+        <label class="filter-pill"><input type="checkbox" value="COMPLETED" checked> Completed</label>
+      </div>
+    </section>
+
+    <section class="results" id="results" aria-live="polite">
+      <div class="empty-state" id="empty-state">
+        <div class="empty-state__stamp">AWAITING<br>INPUT</div>
+        <p>Type a condition above and press <strong>File Search</strong> to pull real, current records from ClinicalTrials.gov.</p>
+      </div>
+    </section>
+
+    <div class="pager" id="pager" hidden>
+      <button id="load-more" class="stamp-button stamp-button--ghost">Pull Next Batch</button>
+      <span id="result-count" class="pager__count"></span>
+    </div>
+  </main>
+
+  <aside class="folder" id="folder" aria-hidden="true">
+    <div class="folder__inner">
+      <button class="folder__close" id="folder-close" aria-label="Close case file">&times; Close</button>
+      <div id="folder-content"></div>
+    </div>
+  </aside>
+  <div class="folder__scrim" id="folder-scrim"></div>
+
+  <footer class="site-footer">
+    <p>Data sourced live from the <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener">ClinicalTrials.gov API v2</a>, a public registry maintained by the U.S. National Library of Medicine. Not medical advice — always confirm eligibility with a study team or your physician.</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
