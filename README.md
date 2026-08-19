@@ -31,6 +31,5 @@ This was my first time working with a real external API instead of a fixed datas
 - Filters reset if you reload the page
 - A map showing trial locations would be a good next addition
 
-## Running it locally
 
 Opening `index.html` directly doesn't work, because browsers block live requests from local files. Run this instead:
