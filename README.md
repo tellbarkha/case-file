@@ -32,4 +32,4 @@ This was my first time working with a real external API instead of a fixed datas
 - A map showing trial locations would be a good next addition
 
 
-Opening `index.html` directly doesn't work, because browsers block live requests from local files. Run this instead:
+
